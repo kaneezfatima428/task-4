@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weather Dashboard - Task 4</title>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css" />
+  <!-- FontAwesome Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+</head>
+<body>
+
+  <div class="weather-container">
+    <!-- Header -->
+    <header class="dashboard-header">
+      <h1><i class="fa-solid fa-cloud-sun"></i> Weather Dashboard</h1>
+      <p>Auspify Technologies - Task 4</p>
+    </header>
+
+    <!-- Search Box -->
+    <div class="search-box">
+      <input 
+        type="text" 
+        id="city-input" 
+        placeholder="Enter city name (e.g. Karachi, London)..." 
+        autocomplete="off"
+      />
+      <button id="search-btn">
+        <i class="fa-solid fa-magnifying-glass"></i> Search
+      </button>
+    </div>
+
+    <!-- Error Message -->
+    <div id="error-msg" class="error-msg hidden">
+      <i class="fa-solid fa-circle-exclamation"></i> <span id="error-text">City not found. Please try again.</span>
+    </div>
+
+    <!-- Loading Spinner -->
+    <div id="loading" class="loading hidden">
+      <i class="fa-solid fa-spinner fa-spin"></i> Fetching weather data...
+    </div>
+
+    <!-- Weather Display Card -->
+    <div id="weather-card" class="weather-card hidden">
+      <div class="location-details">
+        <h2 id="city-name">Karachi, PK</h2>
+        <p id="date-time">Sunday, October 18, 2026</p>
+      </div>
+
+      <div class="temperature-section">
+        <div class="temp-icon">
+          <img id="weather-icon" src="" alt="Weather Icon" />
+        </div>
+        <div class="temp-value">
+          <h3 id="temp">--°C</h3>
+          <p id="weather-desc">--</p>
+        </div>
+      </div>
+
+      <!-- Additional Details Grid -->
+      <div class="weather-details-grid">
+        <div class="detail-card">
+          <i class="fa-solid fa-temperature-half"></i>
+          <div>
+            <span>Feels Like</span>
+            <h4 id="feels-like">--°C</h4>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-droplet"></i>
+          <div>
+            <span>Humidity</span>
+            <h4 id="humidity">--%</h4>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-wind"></i>
+          <div>
+            <span>Wind Speed</span>
+            <h4 id="wind-speed">-- km/h</h4>
+          </div>
+        </div>
+        <div class="detail-card">
+          <i class="fa-solid fa-gauge"></i>
+          <div>
+            <span>Pressure</span>
+            <h4 id="pressure">-- hPa</h4>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Initial State Guide -->
+    <div id="initial-state" class="initial-state">
+      <i class="fa-solid fa-earth-americas"></i>
+      <p>Search for a city to check real-time weather information.</p>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
